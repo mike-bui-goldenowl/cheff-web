@@ -1,6 +1,9 @@
 {
   "name": "chef-web",
   "version": "0.1.0",
+  "engines": {
+    "node": "10.14.2"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
