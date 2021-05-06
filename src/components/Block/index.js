@@ -1,18 +1,37 @@
 import { withTranslation } from "react-i18next";
 import Fade from "react-reveal/Fade";
+import { Col } from "antd";
+import { lazy } from "react";
 
 import * as S from "./styles";
 
-const Block = ({ title, content, t }) => {
+const Container = lazy(() => import("../../common/Container"));
+
+const Block = ({ title, subTitle, backgroundUrl, content, id, height }) => {
   return (
-    <S.Container>
-      <Fade left>
-        <h6>{t(title)}</h6>
-        <S.TextWrapper>
-          <S.Content>{t(content)}</S.Content>
-        </S.TextWrapper>
-      </Fade>
-    </S.Container>
+    <S.Block id={id}>
+      <Container>
+        <S.BlockInner
+          style={{
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundImage: `url(${backgroundUrl})`,
+            minHeight: 400,
+          }}
+        >
+          <Fade left>
+            <Col lg={8} md={24} sm={24} xs={24}>
+              <S.ContentWrapper>
+                <S.Title>{title}</S.Title>
+                <S.Content>{subTitle}</S.Content>
+              </S.ContentWrapper>
+
+              <S.Content>{content}</S.Content>
+            </Col>
+          </Fade>
+        </S.BlockInner>
+      </Container>
+    </S.Block>
   );
 };
 

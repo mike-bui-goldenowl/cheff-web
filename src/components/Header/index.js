@@ -1,12 +1,9 @@
-import { useState, Fragment, lazy } from "react";
+import { useState, Fragment, useEffect, useRef } from "react";
 import { Row, Col, Drawer } from "antd";
 import { CSSTransition } from "react-transition-group";
 import { withTranslation } from "react-i18next";
 
 import * as S from "./styles";
-
-const SvgIcon = lazy(() => import("../../common/SvgIcon"));
-const Button = lazy(() => import("../../common/Button"));
 
 const Header = ({ t }) => {
   const [isNavVisible] = useState(false);
@@ -23,41 +20,60 @@ const Header = ({ t }) => {
 
   const MenuItem = () => {
     const scrollTo = (id) => {
-      const element = document.getElementById(id);
-      element.scrollIntoView({
-        behavior: "smooth",
-      });
-      setVisibility(false);
+      // const element = document.getElementById(id);
+      // element.scrollIntoView({
+      //   behavior: "smooth",
+      // });
+      // setVisibility(false);
     };
+
     return (
       <Fragment>
         <S.CustomNavLinkSmall onClick={() => scrollTo("about")}>
-          <S.Span>{t("About")}</S.Span>
+          <S.Span isDark={navBackground}>{t("About us")}</S.Span>
         </S.CustomNavLinkSmall>
         <S.CustomNavLinkSmall onClick={() => scrollTo("mission")}>
-          <S.Span>{t("Mission")}</S.Span>
+          <S.Span isDark={navBackground}>{t("Mission")}</S.Span>
         </S.CustomNavLinkSmall>
         <S.CustomNavLinkSmall onClick={() => scrollTo("product")}>
-          <S.Span>{t("Product")}</S.Span>
-        </S.CustomNavLinkSmall>
-        <S.CustomNavLinkSmall
-          style={{ width: "180px" }}
-          onClick={() => scrollTo("contact")}
-        >
-          <S.Span>
-            <Button>{t("Contact")}</Button>
-          </S.Span>
+          <S.Span isDark={navBackground}>{t("Product")}</S.Span>
         </S.CustomNavLinkSmall>
       </Fragment>
     );
   };
 
+  const [navBackground, setNavBackground] = useState(false);
+  const navRef = useRef();
+  navRef.current = navBackground;
+  useEffect(() => {
+    const handleScroll = () => {
+      const show = window.scrollY > 100;
+      if (navRef.current !== show) {
+        setNavBackground(show);
+      }
+    };
+    document.addEventListener("scroll", handleScroll);
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
-    <S.Header>
+    <S.Header
+      style={{
+        position: "fixed",
+        zIndex: 1000,
+        backgroundColor: navBackground ? "white" : "transparent",
+        transition: "0.5s ease",
+      }}
+    >
       <S.Container>
-        <Row type="flex" justify="space-between" gutter={20}>
+        <Row type="flex" justify="space-between" align="middle" gutter={10}>
           <S.LogoContainer to="/" aria-label="homepage">
-            <SvgIcon src="logo.svg" />
+            <img
+              src={navBackground ? "/img/logo_1.png" : "/img/logo.png"}
+              aria-label="homepage"
+              width="50%"
+            />
           </S.LogoContainer>
           <S.NotHidden>
             <MenuItem />

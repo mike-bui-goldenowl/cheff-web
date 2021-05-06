@@ -9,6 +9,7 @@ export const Container = styled.div`
   padding: ${(props) => (props.padding ? "2.8rem" : "0 25px")};
   overflow: hidden;
   border-top: ${(props) => (props.border ? "1px solid #CDD1D4" : "")};
+  background: ${(props) => props.color};
 
   @media only screen and (max-width: 1024px) {
     max-width: 950px;

@@ -1,43 +1,33 @@
 import { lazy } from "react";
-import { Row, Col } from "antd";
+import { Col } from "antd";
 import { withTranslation } from "react-i18next";
-import Fade from "react-reveal/Fade";
 
 import * as S from "./styles";
 
-const Button = lazy(() => import("../../common/Button"));
+const Container = lazy(() => import("../../common/Container"));
 
-const MiddleBlock = ({ title, content, button, t }) => {
-  const scrollTo = (id) => {
-    const element = document.getElementById(id);
-    element.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
+const MiddleBlock = ({ title, content, button, section, t }) => {
   return (
-    <S.MiddleBlock>
-      <Row type="flex" justify="center" align="middle">
-        <Fade bottom>
-          <S.ContentWrapper>
-            <Col lg={24} md={24} sm={24} xs={24}>
-              <h6>{t(title)}</h6>
-              <S.Content>{t(content)}</S.Content>
-              {button ? (
-                <Button
-                  name="submit"
-                  type="submit"
-                  onClick={() => scrollTo("mission")}
-                >
-                  {t(button)}
-                </Button>
-              ) : (
-                ""
-              )}
-            </Col>
-          </S.ContentWrapper>
-        </Fade>
-      </Row>
-    </S.MiddleBlock>
+    <Container>
+      <Col style={{ textAlign: "center", padding: "5rem 0" }}>
+        <S.Title>{t(title)}</S.Title>
+        <S.SubTitle>{t(content)}</S.SubTitle>
+        <S.ServiceWrapper>
+          {section.map((item, id) => {
+            return (
+              <S.ServiceItem key={id}>
+                <img src={item.icon} alt={item.icon} with={60} height={60} />
+                <Col>
+                  <S.Circle>{id + 1}</S.Circle>
+                </Col>
+                <S.MinTitle>{t(item.title)}</S.MinTitle>
+                <S.MinPara>{t(item.content)}</S.MinPara>
+              </S.ServiceItem>
+            );
+          })}
+        </S.ServiceWrapper>
+      </Col>
+    </Container>
   );
 };
 

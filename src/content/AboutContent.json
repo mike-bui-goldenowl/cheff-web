@@ -3,14 +3,20 @@
   "text": "This template is ready to use, so you don't need to change anything at a component level, unless you want to customize the default styling.",
   "section": [
     {
-      "title": "Why Antd?",
-      "content": "Ant Design is a React UI library that has a lot of easy-to-use components for building elegant UI.",
-      "icon": "notes.svg"
+      "title": "Choose the meal",
+      "content": "New menu everyday",
+      "icon": "/img/6.png"
     },
     {
-      "title": "Why styled-components?",
-      "content": "Styled Components gives you total control over your components.",
-      "icon": "notes.svg"
+      "title": "We make your recipe",
+      "content": "We have the details instruction in every single meal",
+      "icon": "/img/7.png"
+    },
+    {
+      "title": "Let's cook!",
+      "content": "Enjoy your time",
+      "icon": "/img/8.png"
     }
-  ]
+  ],
+  "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s \nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s "
 }

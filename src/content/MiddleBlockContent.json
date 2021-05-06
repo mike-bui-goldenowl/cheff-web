@@ -1,6 +1,22 @@
 {
-    "title": "Introduce Your Product Quickly & Effectively",
-    "text": "Landy comes with multi-lingual support, all of the content is stored in the JSON files, so that you can manage the texts without having any prior knowledge in developing web applications using React.js.",
-    "button": "Get Started"
+    "title": "How does it work",
+    "text": "It's easier than you thought",
+    "section": [
+      {
+        "title": "Choose the meal",
+        "content": "New menu everyday",
+        "icon": "/img/6.png"
+      },
+      {
+        "title": "We make your recipe",
+        "content": "We have the details instruction in every single meal",
+        "icon": "/img/7.png"
+      },
+      {
+        "title": "Let's cook!",
+        "content": "Enjoy your time",
+        "icon": "/img/8.png"
+      }
+    ]
   }
   

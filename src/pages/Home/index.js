@@ -3,21 +3,25 @@ import { lazy } from "react";
 import IntroContent from "../../content/IntroContent.json";
 import MiddleBlockContent from "../../content/MiddleBlockContent.json";
 import AboutContent from "../../content/AboutContent.json";
-import MissionContent from "../../content/MissionContent.json";
-import ProductContent from "../../content/ProductContent.json";
-import ContactContent from "../../content/ContactContent.json";
+import SectionCContent from "../../content/SectionCContent.json";
+import SectionDContent from "../../content/SectionDContent.json";
+import SectionEContent from "../../content/SectionEContent.json";
 
-const ContactFrom = lazy(() => import("../../components/ContactForm"));
-const ContentBlock = lazy(() => import("../../components/ContentBlock"));
 const MiddleBlock = lazy(() => import("../../components/MiddleBlock"));
-const Container = lazy(() => import("../../common/Container"));
 const ScrollToTop = lazy(() => import("../../common/ScrollToTop"));
+const Content = lazy(() => import("../../components/Content"));
+const Block = lazy(() => import("../../components/Block"));
+const Testimonials = lazy(() => import("../../components/Testimonials"));
+
+const BlockWithBackground = lazy(() =>
+  import("../../components/BlockWithBackground")
+);
 
 const Home = () => {
   return (
-    <Container>
+    <div id="home-page">
       <ScrollToTop />
-      <ContentBlock
+      <Content
         type="right"
         first="true"
         title={IntroContent.title}
@@ -30,36 +34,32 @@ const Home = () => {
         title={MiddleBlockContent.title}
         content={MiddleBlockContent.text}
         button={MiddleBlockContent.button}
-      />
-      <ContentBlock
-        type="left"
-        title={AboutContent.title}
-        content={AboutContent.text}
         section={AboutContent.section}
-        icon="graphs.svg"
+      />
+      <BlockWithBackground
+        title={SectionCContent.title}
+        subTitle={SectionCContent.subtitle}
+        listContent={SectionCContent.list}
+        imageUrl={SectionCContent.imageUrl}
+        backgroundUrl={SectionCContent.backgroundUrl}
         id="about"
       />
-      <ContentBlock
-        type="right"
-        title={MissionContent.title}
-        content={MissionContent.text}
-        icon="product-launch.svg"
-        id="mission"
+      <BlockWithBackground
+        title={SectionDContent.title}
+        subTitle={SectionDContent.subtitle}
+        content={SectionDContent.content}
+        imageUrl={SectionDContent.imageUrl}
+        backgroundUrl={SectionDContent.backgroundUrl}
+        id="intro1"
       />
-
-      <ContentBlock
-        type="left"
-        title={ProductContent.title}
-        content={ProductContent.text}
-        icon="waving.svg"
-        id="product"
+      <Block
+        title={SectionEContent.title}
+        subTitle={SectionEContent.subtitle}
+        content={SectionEContent.content}
+        backgroundUrl={SectionEContent.backgroundUrl}
       />
-      <ContactFrom
-        title={ContactContent.title}
-        content={ContactContent.text}
-        id="contact"
-      />
-    </Container>
+      <Testimonials />
+    </div>
   );
 };
 

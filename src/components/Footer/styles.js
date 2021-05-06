@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Footer = styled.footer`
   background: rgb(249, 250, 252);
@@ -55,6 +55,7 @@ export const Extra = styled.section`
 export const LogoContainer = styled.div`
   display: flex;
   position: relative;
+  padding: 2rem 0;
 `;
 
 export const Select = styled.div`
@@ -74,9 +75,9 @@ export const Para = styled.div`
 
 export const Large = styled(Link)`
   font-size: 16px;
-  color: rgba(2, 7, 62, 0.8);
-  text-align: ${(props) => (props.left ? 'left' : '')};
-  padding: ${(props) => (props.left ? '0 10%' : '')};
+  color: white;
+  text-align: ${(props) => (props.left ? "left" : "")};
+  padding: ${(props) => (props.left ? "0 10%" : "")};
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-transform: capitalize;
@@ -167,4 +168,8 @@ export const LangSelect = styled.select`
   border: none;
   font-size: 1rem;
   background: rgb(249, 250, 252);
+`;
+
+export const Spacing = styled.div`
+  width: 3rem;
 `;

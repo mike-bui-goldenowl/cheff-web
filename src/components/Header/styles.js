@@ -4,6 +4,8 @@ import { MenuOutlined } from '@ant-design/icons';
 
 export const Header = styled.header`
   padding: 1rem 0.5rem;
+  width: 100%;
+
 `;
 
 export const LogoContainer = styled(Link)`
@@ -96,4 +98,5 @@ export const Outline = styled(MenuOutlined)`
 
 export const Span = styled.span`
   cursor: pointer;
+  color: ${(props) => (props.isDark ? 'black' : 'white')};
 `;
