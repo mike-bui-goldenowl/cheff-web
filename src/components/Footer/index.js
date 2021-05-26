@@ -87,7 +87,6 @@ const Footer = () => {
         width={1000}
       >
         {type === TYPE_MODAL.contact ? <Contact /> : <PrivacyPolicy />}
-        <Contact />
       </Modal>
     </Fragment>
   );
