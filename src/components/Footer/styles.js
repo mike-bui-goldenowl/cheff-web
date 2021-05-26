@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import {  Button } from 'antd';
+
 
 export const Footer = styled.footer`
   background: rgb(249, 250, 252);
@@ -90,19 +92,6 @@ export const Large = styled(Link)`
   }
 `;
 
-export const Chat = styled.p`
-  color: rgba(2, 7, 62, 0.8);
-  max-width: 85px;
-  border-bottom: 1px solid rgba(2, 7, 62, 0.8);
-  cursor: pointer;
-  margin-top: 1rem;
-
-  &:hover {
-    border-bottom: 1px solid rgb(255, 130, 92);
-    color: rgb(255, 130, 92);
-  }
-`;
-
 export const Empty = styled.div`
   position: relative;
   height: 53px;
@@ -131,25 +120,6 @@ export const FooterContainer = styled.div`
   }
 `;
 
-export const Hidden = styled.div`
-  display: contents;
-  width: 100%;
-
-  @media screen and (max-width: 414px) {
-    display: none;
-  }
-`;
-
-export const Language = styled.h4`
-  font-size: 16px;
-  text-transform: uppercase;
-  color: #000;
-
-  @media screen and (max-width: 414px) {
-    padding: 1.5rem 0;
-  }
-`;
-
 export const Label = styled.label`
   font-size: 16px;
   text-transform: uppercase;
@@ -161,13 +131,6 @@ export const Label = styled.label`
     padding: 1.5rem 0;
     margin-bottom: 1rem;
   }
-`;
-
-export const LangSelect = styled.select`
-  cursor: pointer;
-  border: none;
-  font-size: 1rem;
-  background: rgb(249, 250, 252);
 `;
 
 export const Spacing = styled.div`

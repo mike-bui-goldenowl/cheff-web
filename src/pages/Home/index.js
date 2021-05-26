@@ -35,29 +35,31 @@ const Home = () => {
         button={MiddleBlockContent.button}
         section={MiddleBlockContent.section}
       />
-      <BlockWithBackground
-        title={SectionCContent.title}
-        subTitle={SectionCContent.subtitle}
-        listContent={SectionCContent.list}
-        imageUrl={SectionCContent.imageUrl}
-        backgroundUrl={SectionCContent.backgroundUrl}
-        id="about"
-      />
+      
       <BlockWithBackground
         title={SectionDContent.title}
         subTitle={SectionDContent.subtitle}
         content={SectionDContent.content}
         imageUrl={SectionDContent.imageUrl}
         backgroundUrl={SectionDContent.backgroundUrl}
-        id="intro1"
+        id="about"
+      />
+      <BlockWithBackground
+        title={SectionCContent.title}
+        subTitle={SectionCContent.subtitle}
+        listContent={SectionCContent.list}
+        imageUrl={SectionCContent.imageUrl}
+        backgroundUrl={SectionCContent.backgroundUrl}
+        id="function"
       />
       <Block
         title={SectionEContent.title}
         subTitle={SectionEContent.subtitle}
         content={SectionEContent.content}
         backgroundUrl={SectionEContent.backgroundUrl}
+        
       />
-      <Testimonials />
+      <Testimonials id="feedback"/>
     </div>
   );
 };

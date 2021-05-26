@@ -28,13 +28,13 @@ const data = [
   },
 ];
 
-const Testimonials = () => {
+const Testimonials = ({id}) => {
   return (
-    <Container>
+    <Container >
       <S.Block>
         <S.Title>Trải nghiệm người dùng</S.Title>
 
-        <Row>
+        <Row id={id}>
           <Carousel
             showArrows={true}
             showStatus={false}

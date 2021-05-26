@@ -20,23 +20,23 @@ const Header = ({ t }) => {
 
   const MenuItem = () => {
     const scrollTo = (id) => {
-      // const element = document.getElementById(id);
-      // element.scrollIntoView({
-      //   behavior: "smooth",
-      // });
-      // setVisibility(false);
+      const element = document.getElementById(id);
+      element.scrollIntoView({
+        behavior: "smooth",
+      });
+      setVisibility(false);
     };
 
     return (
       <Fragment>
         <S.CustomNavLinkSmall onClick={() => scrollTo("about")}>
-          <S.Span isDark={navBackground}>{t("About us")}</S.Span>
+          <S.Span isDark={navBackground}>Giới thiệu</S.Span>
         </S.CustomNavLinkSmall>
-        <S.CustomNavLinkSmall onClick={() => scrollTo("mission")}>
-          <S.Span isDark={navBackground}>{t("Mission")}</S.Span>
+        <S.CustomNavLinkSmall onClick={() => scrollTo("function")}>
+          <S.Span isDark={navBackground}>Tính năng</S.Span>
         </S.CustomNavLinkSmall>
-        <S.CustomNavLinkSmall onClick={() => scrollTo("product")}>
-          <S.Span isDark={navBackground}>{t("Product")}</S.Span>
+        <S.CustomNavLinkSmall onClick={() => scrollTo("feedback")}>
+          <S.Span isDark={navBackground}>Đánh giá</S.Span>
         </S.CustomNavLinkSmall>
       </Fragment>
     );

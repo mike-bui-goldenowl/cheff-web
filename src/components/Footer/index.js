@@ -1,13 +1,36 @@
-import { lazy, Fragment } from "react";
-import { Row, Col } from "antd";
+import { lazy, Fragment, useState } from "react";
+import { Row, Col, Modal } from "antd";
 import { withTranslation } from "react-i18next";
 import Fade from "react-reveal/Fade";
 import * as S from "./styles";
+import PrivacyPolicy from "../Privacy";
+import Contact from "../Contact";
 
 const Container = lazy(() => import("../../common/Container"));
 const AppDownload = lazy(() => import("../../common/AppDownload"));
 
+const TYPE_MODAL = {
+  privacy: "Chính sách và điều khoản",
+  contact: "Liên hệ",
+};
+
 const Footer = () => {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [type, setModalType] = useState(""); //privacy || contact
+
+  const showModal = (type) => {
+    setIsModalVisible(true);
+    setModalType(type);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
   const SocialLink = ({ href, src }) => {
     return (
       <a
@@ -40,14 +63,13 @@ const Footer = () => {
             </Row>
             <Row type="flex" justify="space-between">
               <Row align="top" span={20}>
-                <Col style={{ marginRight: 20 }}>
-                  <S.Large to="/">About us</S.Large>
-                  <S.Large to="/">Features</S.Large>
-                  <S.Large to="/">Our contact</S.Large>
-                </Col>
                 <Col>
-                  <S.Large to="/">Get help</S.Large>
-                  <S.Large to="/">Our policy</S.Large>
+                  <S.Large onClick={() => showModal(TYPE_MODAL.contact)}>
+                    Liên hệ
+                  </S.Large>
+                  <S.Large onClick={() => showModal(TYPE_MODAL.privacy)}>
+                    Điều khoản - Chính sách
+                  </S.Large>
                 </Col>
               </Row>
               <Col lg={8} md={8} sm={12} xs={24} align="right">
@@ -57,6 +79,16 @@ const Footer = () => {
           </Container>
         </S.Footer>
       </Fade>
+      <Modal
+        title={type}
+        visible={isModalVisible}
+        onOk={handleOk}
+        onCancel={handleCancel}
+        width={1000}
+      >
+        {type === TYPE_MODAL.contact ? <Contact /> : <PrivacyPolicy />}
+        <Contact />
+      </Modal>
     </Fragment>
   );
 };
