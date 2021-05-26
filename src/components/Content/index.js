@@ -36,12 +36,15 @@ const Content = ({ t, id }) => {
               <S.Spacing />
               <S.Spacing />
               <S.Spacing />
-              <S.Title style={{ margin: 0, padding: 0 }}>Cheff App</S.Title>
+              <S.Title style={{ margin: 0, padding: 0 }}>
+                Ứng dụng Cheff
+              </S.Title>
             </Row>
-            <S.Content>Lorem ipsum dolor sit amet</S.Content>
+            <S.Content>Muốn ăn thì lăn vào Cheff</S.Content>
             <S.SubContent>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been
+              Ăn thì dễ, nấu thì khó
+              <br />
+              Chớ mà cau có, đã có Cheff lo
             </S.SubContent>
             <Row>
               <img

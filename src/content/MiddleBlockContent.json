@@ -1,20 +1,20 @@
 {
-    "title": "How does it work",
-    "text": "It's easier than you thought",
+    "title": "Nấu ăn chưa bao giờ dễ dàng đến thế",
+    "text": "",
     "section": [
       {
-        "title": "Choose the meal",
-        "content": "New menu everyday",
+        "title": "Chọn món ăn",
+        "content": "Món ăn đa dạng được cập nhật thường xuyên",
         "icon": "/img/6.png"
       },
       {
-        "title": "We make your recipe",
-        "content": "We have the details instruction in every single meal",
+        "title": "Nhận ngay công thức",
+        "content": "Mỗi món ăn đi kèm hình ảnh và hướng dẫn chi tiết",
         "icon": "/img/7.png"
       },
       {
-        "title": "Let's cook!",
-        "content": "Enjoy your time",
+        "title": "Vào bếp và nấu thôi!",
+        "content": "Trổ tài cùng Cheff nào!",
         "icon": "/img/8.png"
       }
     ]

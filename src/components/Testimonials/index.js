@@ -10,15 +10,21 @@ const Container = lazy(() => import("../../common/Container"));
 const data = [
   {
     id: 1,
-    user: "Mr.Steve",
+    user: "Minh Trang",
     content:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using",
+      "Giao diện vừa dễ nhìn lại dễ sử dụng. App này có nhiều công thức nấu ăn thuần Việt đi kèm hướng dẫn chi tiết.",
   },
   {
     id: 2,
-    user: "Mr.Mike",
+    user: "Nguyễn Anh Thư",
     content:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using",
+      "Mình biết thêm được nhiều món ăn ngon thông qua ứng dụng Cheff này. Nhiều món mới lạ mà mình chưa nghe bao giờ, còn đi kèm hình ảnh rất sống động và bắt mắt nữa.",
+  },
+  {
+    id: 3,
+    user: "Vinh Nguyễn",
+    content:
+      "Mình đã dùng và thấy rất thích app này. Mình còn giới thiệu cho người thân và bạn bè cùng sử dụng nữa. App này rất hữu ích với những người không biết nấu ăn như mình.",
   },
 ];
 
@@ -26,7 +32,7 @@ const Testimonials = () => {
   return (
     <Container>
       <S.Block>
-        <S.Title>WHAT PEOPLE SAY</S.Title>
+        <S.Title>Trải nghiệm người dùng</S.Title>
 
         <Row>
           <Carousel

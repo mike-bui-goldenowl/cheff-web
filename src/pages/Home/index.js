@@ -2,7 +2,6 @@ import { lazy } from "react";
 
 import IntroContent from "../../content/IntroContent.json";
 import MiddleBlockContent from "../../content/MiddleBlockContent.json";
-import AboutContent from "../../content/AboutContent.json";
 import SectionCContent from "../../content/SectionCContent.json";
 import SectionDContent from "../../content/SectionDContent.json";
 import SectionEContent from "../../content/SectionEContent.json";
@@ -34,7 +33,7 @@ const Home = () => {
         title={MiddleBlockContent.title}
         content={MiddleBlockContent.text}
         button={MiddleBlockContent.button}
-        section={AboutContent.section}
+        section={MiddleBlockContent.section}
       />
       <BlockWithBackground
         title={SectionCContent.title}
