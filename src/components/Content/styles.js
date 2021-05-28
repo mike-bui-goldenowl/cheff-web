@@ -20,8 +20,9 @@ export const Title = styled.p`
 export const Content = styled.p`
   margin: 1.5rem 0 2rem 0;
   color: white;
-  font-size: 36px;
+  font-size: 46px;
   font-family: "SFProDisplayBold";
+  font-style: italic
 `;
 
 export const SubContent = styled.p`
@@ -29,7 +30,7 @@ export const SubContent = styled.p`
   color: white;
   padding: 0 1rem 0;
   border-left: 2px solid red;
-  font-size: 14px;
+  font-size: 18px;
   font-family: "SFProDisplayRegular";
 `;
 

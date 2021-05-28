@@ -40,6 +40,7 @@ const Content = ({ t, id }) => {
                 Ứng dụng Cheff
               </S.Title>
             </Row>
+            
             <S.Content>Muốn ăn thì lăn vào Cheff</S.Content>
             <S.SubContent>
               Ăn thì dễ, nấu thì khó

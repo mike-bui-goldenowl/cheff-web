@@ -40,23 +40,23 @@ export const Circle = styled.div`
 `;
 
 export const Title = styled.h6`
-  font-size: 22px;
+  font-size: 24px;
   color: black;
 `;
 export const SubTitle = styled.span`
-  font-size: 14px;
+  font-size: 18px;
   color: #b3b7c0;
 `;
 
 
 export const MinTitle = styled.h6`
-  font-size: 1rem;
+  font-size: 18px;
   line-height: 1rem;
   padding: 0.5rem 0;
 `;
 
 export const MinPara = styled.p`
-  font-size: 0.75rem;
+  font-size: 16px;
 `;
 
 export const ServiceItem = styled.div`
